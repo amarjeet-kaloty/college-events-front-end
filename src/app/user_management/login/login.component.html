@@ -1,0 +1,42 @@
+<div class="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 login-box mx-auto" style="text-align: center;">
+                <div class="alert alert-danger" *ngIf="authentication">
+                    <strong>{{ msg }}</strong>
+                </div>
+                <div class="login-logo-background">
+                    <img src="../../assets/images/festival.png">
+                </div>
+                <form #loginForm="ngForm" (ngSubmit)="loginUser()">
+                    <form class="form-group">
+                        <input type="email" class="form-control" placeholder="UCF-Email" name="email" [(ngModel)]="user.email" 
+                        required #email="ngModel" [class.is-invalid]="email.invalid && email.touched" 
+                        pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z_]{2,3}$"
+                        >
+                        <div *ngIf="email.errors && (email.invalid && email.touched)">
+                            <small class="text-danger" *ngIf="email.errors.required">Email-id is required</small>
+                            <small class="text-danger" *ngIf="email.errors.pattern">Enter a valid email.</small>
+                        </div>
+                    </form>
+                    <form class="form-group">
+                        <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password"
+                        required #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
+                        >
+                    </form>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="remember"> Remember me</label>
+                        <small class="forget-password" (click)="forgetPassword()" onmouseover="" style="float: right; cursor: pointer;" >Forget password</small>
+                    </div>
+                    <div class="login-button">
+                        <button [disabled]="!loginForm.valid" type="submit"
+                        class="btn btn-primary" style="width: 300px; height: 40px; margin-top: 15px; border-radius: 25px;">Login</button>
+                    </div>
+                    <div>
+                        <small class="register" (click)="register()" onmouseover="" style="cursor: pointer; margin-top: 5px;">New User? Register here</small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

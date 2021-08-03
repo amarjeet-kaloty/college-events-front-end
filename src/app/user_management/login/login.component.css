@@ -1,0 +1,48 @@
+.login{
+    font-family: sans-serif;
+    background-color: rgb(240, 233, 233);
+    height: 100vh;
+}
+
+.login-box{
+    margin-top: 3%;
+    border: 2px solid;
+    padding: 45px 35px 25px 35px;
+    background-color: rgb(24, 23, 23);
+    border-radius: 25px;
+}
+
+.logo{
+    width: 50;
+    height: 50;
+}
+
+.form-group{
+    margin-top: 20px;
+}
+
+.checkbox{
+    margin-top: 10px;
+    text-align: left;
+    color: white;
+}
+
+span.register { 
+    cursor: pointer; 
+}
+
+span.forget-password{
+    cursor: pointer; 
+}
+
+.register{
+    color: white;
+}
+
+.register:hover{
+    color: orange;
+}
+
+.forget-password:hover{
+    color: orange;
+}
